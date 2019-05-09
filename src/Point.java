@@ -20,23 +20,27 @@ public class Point {
     this.y = y;
   }
   public float[] getXY() {
-    float[] arr = new float[2];
-    arr[0] = x;
-    arr[1] = y;
+    float[] arr = new float[] {this.x, this.y};
     return arr;
   }
   public void setXY(float x, float y) {
     this.x = x;
     this.y = y;
   }
+  public void show(float[] arr) {
+    for (float i : arr) {
+      System.out.print(i + "\t");
+    }
+  }
   @Override
   public String toString() {
-    return "Point " + "(" + getX() + ", " + getY() + ")";
+    return "x = " + getX() + ", y = " + getY();
   }
   public static void main(String[] args) {
     Point point = new Point();
     System.out.println(point);
     point = new Point(1.1f, 1.1f);
     System.out.println(point);
+    point.show(point.getXY());
   }
 }
